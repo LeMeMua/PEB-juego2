@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Ground
+  - Objects
+  - Water
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - physicswater
+  - objects
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 1Sky
+    uniqueID: 622537291
+    locked: 0
+  - name: 2Cloud
+    uniqueID: 845205647
+    locked: 0
+  - name: 3Background
+    uniqueID: 4075495807
+    locked: 0
+  - name: Player
+    uniqueID: 2273816839
+    locked: 0
+  - name: 4Foreground
+    uniqueID: 2166505583
+    locked: 0
+  m_RenderingLayers:
+  - Default
