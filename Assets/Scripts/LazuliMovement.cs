@@ -15,6 +15,17 @@ public class PlayerMovement : MonoBehaviour
     float anguloRadianes;
     float anguloGrados;
 
+
+    public float distanciaMark = 0.05f;   // distancia desde el player a cada mark
+    public float spriteOffset = 0f;
+
+    public waterdropplet pool; // pool de agua
+    public float sprayRate = 0.02f; // cada cuántos segundos sale una gota
+    public float dropletSpeed = 8f; // velocidad del agua
+
+    float sprayTimer = 0f;
+    bool spraying = false;
+
     int cantidad_agua = 0;
     float time_cooldown = 0.1f;
 
@@ -23,9 +34,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 objetivo;
     [SerializeField] private Camera cam;
+    
 
     public GameObject agua;
     public GameObject varita;
+    public GameObject mark;
+    public GameObject mark2;
     public Transform marcador;
     public Transform marcador2;
 
@@ -34,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>(); // CORRECCIÓN: Obtener el Animator, no Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
+        mark = transform.Find("Marcador").gameObject;
+
     }
 
     // Update is called once per frame
@@ -45,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
         anguloRadianes= Mathf.Atan2(objetivo.y-transform.position.y, objetivo.x-transform.position.x);
         anguloGrados= (180/Mathf.PI)*anguloRadianes-90;
 
-        FlipSprite();
+        FlipSprite(anguloGrados);
+        RotateMarks(anguloGrados);
 
         // Animaciones
         animator.SetBool("Running", horizontalInput != 0.0f && isGrounded);
@@ -61,51 +78,99 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            Shoot();
+            spraying = true;
+            SprayWater();
+        }
+        else
+        {
+            spraying = false;
+            sprayTimer = 0f;
         }
     }
 
+    void SprayWater()
+    {
+        sprayTimer += Time.deltaTime;
+
+        while (sprayTimer >= sprayRate)
+        {
+            FireDroplet(marcador);
+
+            cantidad_agua += 2;
+            Gamemanager.instance.puntos_totales(cantidad_agua);
+
+            sprayTimer -= sprayRate;
+        }
+    }
+
+    void FireDroplet(Transform spawnPoint)
+    {
+        GameObject drop = pool.Get();
+
+        drop.transform.position = spawnPoint.position;
+
+        drop.SetActive(true);
+
+        Rigidbody2D drb = drop.GetComponent<Rigidbody2D>();
+
+        Vector2 dir = (objetivo - transform.position).normalized;
+        Debug.Log(dir);
+        drb.linearVelocity = dir * dropletSpeed;
+    }
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y); // Corrección para Unity 6.0
     }
 
-    void FlipSprite()
+    void FlipSprite(float grados)
     {
         if (isFacingRight && anguloGrados > 0f || !isFacingRight && anguloGrados < 0f)
         {
             isFacingRight = !isFacingRight;
-            Vector3 ls = transform.localScale;
-            ls.x *= -1f;
-            transform.localScale = ls;
+            GetComponent<SpriteRenderer>().flipX = !isFacingRight;
+
         }
     }
 
-    void Shoot()
+    void RotateMarks(float grados)
     {
-        StartCoroutine(ShootBurst());
+        // 1) Calcula la dirección desde el player hacia el mouse (NO normalices antes de poner posición si quieres usar distancia fija)
+        Vector2 dir = (objetivo - transform.position);
+        dir.Normalize();
+
+        // 2) Coloca los marks en la dirección correcta, a una distancia fija
+        mark.transform.position = (Vector2)transform.position + dir * distanciaMark;
+
+        float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        // Si tu sprite "marca" apunta hacia arriba en el editor, usa spriteOffset = -90 o +90 según necesites.
+        mark.transform.rotation = Quaternion.Euler(0f, 0f, ang + spriteOffset);
     }
+    //void Shoot()
+    //{
+    //    StartCoroutine(ShootBurst());
+    //}
 
-    IEnumerator ShootBurst()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            GameObject bullet = Instantiate(agua, marcador.position, marcador.rotation);
-            GameObject bullet2 = Instantiate(agua, marcador2.position, marcador2.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
-            rb.linearVelocity = (isFacingRight ? Vector2.right : Vector2.left) * bulletSpeed;
-            rb2.linearVelocity = (isFacingRight ? Vector2.right : Vector2.left) * bulletSpeed;
+    //IEnumerator ShootBurst()
+    //{
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        GameObject bullet = Instantiate(agua, marcador.position, marcador.rotation);
+    //        GameObject bullet2 = Instantiate(agua, marcador2.position, marcador2.rotation);
+    //        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+    //        Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
+    //        rb.linearVelocity = (isFacingRight ? Vector2.right : Vector2.left) * bulletSpeed;
+    //        rb2.linearVelocity = (isFacingRight ? Vector2.right : Vector2.left) * bulletSpeed;
 
-            cantidad_agua += 2;
+    //        cantidad_agua += 2;
 
-            Gamemanager.instance.puntos_totales(cantidad_agua);
+    //        Gamemanager.instance.puntos_totales(cantidad_agua);
 
-            yield return new WaitForSeconds(0.05f);
-        }
-    }
+    //        yield return new WaitForSeconds(0.05f);
+    //    }
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
