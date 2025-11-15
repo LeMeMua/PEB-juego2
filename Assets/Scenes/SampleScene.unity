@@ -294,6 +294,7 @@ MonoBehaviour:
   pool: {fileID: 623735657}
   sprayRate: 0.01
   dropletSpeed: 15
+  impulso: 0.2
   cam: {fileID: 519420031}
   agua: {fileID: 5776851610848090228, guid: 64ab4c2a1f5d3464f9326a1042c05ec2, type: 3}
   varita: {fileID: 1197477309}
@@ -11159,7 +11160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropletPrefab: {fileID: 5776851610848090228, guid: 64ab4c2a1f5d3464f9326a1042c05ec2, type: 3}
-  poolSize: 200
+  poolSize: 100
 --- !u!4 &623735658
 Transform:
   m_ObjectHideFlags: 0

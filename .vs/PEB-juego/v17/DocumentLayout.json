@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lazulimovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|c:\\users\\yosss\\downloads\\eclipse-unity-main\\peb-juego\\assets\\rotatiing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\rotatiing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\waterdropplet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\waterdropplet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\rotatiing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\rotatiing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,20 +50,20 @@
               "RelativeToolTip": "Assets\\rotatiing.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T20:49:51.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T20:49:51.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "waterdropplet.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\waterdropplet.cs",
               "RelativeDocumentMoniker": "Assets\\waterdropplet.cs",
               "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\waterdropplet.cs",
               "RelativeToolTip": "Assets\\waterdropplet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T20:18:57.061Z"
+              "WhenOpened": "2025-11-14T20:18:57.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -77,22 +73,9 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\LazuliMovement.cs",
               "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\LazuliMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\LazuliMovement.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAAGIAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAAIYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T20:15:28.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "water.cs",
-              "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\water.cs",
-              "RelativeDocumentMoniker": "Assets\\water.cs",
-              "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\water.cs",
-              "RelativeToolTip": "Assets\\water.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T20:13:38.205Z",
               "EditorCaption": ""
             }
           ]

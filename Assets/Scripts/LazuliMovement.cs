@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     bool isVarita = false;
     float anguloRadianes;
     float anguloGrados;
+    float max_impulse = 2f;
+    Vector2 velocity;
 
 
     public float distanciaMark = 0.05f;   // distancia desde el player a cada mark
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     public waterdropplet pool; // pool de agua
     public float sprayRate = 0.02f; // cada cuántos segundos sale una gota
     public float dropletSpeed = 8f; // velocidad del agua
+
+    public float impulso = 0f;
 
     float sprayTimer = 0f;
     bool spraying = false;
@@ -109,15 +113,26 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject drop = pool.Get();
 
-        drop.transform.position = spawnPoint.position;
+        if (drop != null)
+        {
+            drop.transform.position = spawnPoint.position;
 
-        drop.SetActive(true);
+            drop.SetActive(true);
 
-        Rigidbody2D drb = drop.GetComponent<Rigidbody2D>();
+            Rigidbody2D drb = drop.GetComponent<Rigidbody2D>();
 
-        Vector2 dir = (objetivo - transform.position).normalized;
-        Debug.Log(dir);
-        drb.linearVelocity = dir * dropletSpeed;
+            Vector2 dir = (objetivo - transform.position).normalized;
+            Debug.Log(dir);
+            drb.linearVelocity = dir * dropletSpeed;
+            if (dir.y < 0.0f) // apuntando hacia abajo
+            {
+                // empuje directo hacia arriba
+                velocity = rb.linearVelocity;
+                velocity.y += impulso;
+                velocity.y = Mathf.Clamp(velocity.y, 0, max_impulse);
+                rb.linearVelocity = velocity;
+            }
+        }
     }
     private void FixedUpdate()
     {
