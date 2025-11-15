@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Gamemanager : MonoBehaviour
 
     public HUD hud;
     public GameObject[] vidas;
+    private int vidasRestantes = 3;
+
     private void Awake()
     {
         if (instance == null)
@@ -16,17 +19,51 @@ public class Gamemanager : MonoBehaviour
         }
         else
         {
-            Debug.Log("M�s de un manager");
+            Debug.Log("Más de un manager");
         }
     }
+
+    private void Start()
+    {
+        // Reiniciar vidas al iniciar
+        vidasRestantes = vidas.Length;
+        for (int i = 0; i < vidas.Length; i++)
+        {
+            if (vidas[i] != null)
+                vidas[i].SetActive(true);
+        }
+        puntosTotales = 0;
+    }
+
     public void puntos_totales (int puntos_a_sumar)
     {
         puntosTotales += puntos_a_sumar;
-        hud.actualizar_puntos(puntosTotales);
+        if (hud != null)
+            hud.actualizar_puntos(puntosTotales);
     }
 
     public void desactivar_vida(int indice)
     {
-        vidas[indice].SetActive(false);
+        if (indice >= 0 && indice < vidas.Length && vidas[indice] != null)
+        {
+            vidas[indice].SetActive(false);
+            vidasRestantes--;
+            
+            if (vidasRestantes <= 0)
+            {
+                GameOver();
+            }
+        }
+    }
+
+    private void GameOver()
+    {
+        // Guardar la puntuación final
+        PlayerPrefs.SetInt("LastScore", puntosTotales);
+        PlayerPrefs.Save();
+        
+        // Cargar escena de game over
+        SceneManager.LoadScene("GameOverScene");
     }
 }
+
