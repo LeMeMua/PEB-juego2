@@ -521,25 +521,25 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Jumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Grounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Varita
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Hurting
     m_Type: 4
@@ -827,8 +827,8 @@ AnimatorStateMachine:
     second:
     - {fileID: 7805831548710261856}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 0, y: -150, z: 0}
-  m_EntryPosition: {x: 20, y: -20, z: 0}
+  m_AnyStatePosition: {x: -20, y: -150, z: 0}
+  m_EntryPosition: {x: -20, y: -30, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -1651653530622303118}
