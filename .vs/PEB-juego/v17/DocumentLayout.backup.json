@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|c:\\users\\yosss\\downloads\\eclipse-unity-main\\peb-juego\\assets\\scripts\\introscenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\introscenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|c:\\users\\yosss\\downloads\\eclipse-unity-main\\peb-juego\\assets\\scripts\\scenetransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenetransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|c:\\users\\yosss\\downloads\\eclipse-unity-main\\peb-juego\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\fov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\fov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lazulimovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\recargua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\recargua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\hurting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +98,58 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SceneTransition.cs",
+              "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\SceneTransition.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneTransition.cs",
+              "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\SceneTransition.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneTransition.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAE4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:16:24.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IntroSceneController.cs",
+              "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\IntroSceneController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\IntroSceneController.cs",
+              "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\IntroSceneController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\IntroSceneController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAA1wEsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:13:22.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainMenuController.cs",
+              "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\MainMenuController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenuController.cs",
+              "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\MainMenuController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenuController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:12:08.468Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PauseMenu.cs",
+              "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\PauseMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PauseMenu.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:11:45.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "GeneratedFromSurface-Custom-light.shader",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Temp\\GeneratedFromSurface-Custom-light.shader",
               "RelativeDocumentMoniker": "Temp\\GeneratedFromSurface-Custom-light.shader",
@@ -90,25 +157,23 @@
               "RelativeToolTip": "Temp\\GeneratedFromSurface-Custom-light.shader",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-11-17T04:15:23.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T04:15:23.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "FOV.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\FOV.cs",
               "RelativeDocumentMoniker": "Assets\\FOV.cs",
               "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\FOV.cs",
               "RelativeToolTip": "Assets\\FOV.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAIwFQAAABjAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAwwFQAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T03:02:07.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T03:02:07.663Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "recargua.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\recargua.cs",
               "RelativeDocumentMoniker": "Assets\\recargua.cs",
@@ -120,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "enemy.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\enemy.cs",
               "RelativeDocumentMoniker": "Assets\\enemy.cs",
@@ -132,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "waterdropplet.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\waterdropplet.cs",
               "RelativeDocumentMoniker": "Assets\\waterdropplet.cs",
@@ -144,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "LazuliMovement.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\LazuliMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LazuliMovement.cs",
@@ -162,13 +227,13 @@
               "RelativeDocumentMoniker": "Assets\\Gamemanager.cs",
               "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Gamemanager.cs",
               "RelativeToolTip": "Assets\\Gamemanager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowB4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T18:40:00.654Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Hurting2.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Hurting2.cs",
               "RelativeDocumentMoniker": "Assets\\Hurting2.cs",
@@ -180,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "rotatiing.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\rotatiing.cs",
               "RelativeDocumentMoniker": "Assets\\rotatiing.cs",
@@ -192,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "water.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\water.cs",
               "RelativeDocumentMoniker": "Assets\\water.cs",
@@ -204,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "HUD.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\HUD.cs",
               "RelativeDocumentMoniker": "Assets\\HUD.cs",
@@ -216,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
@@ -224,11 +289,12 @@
               "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T19:21:11.048Z"
+              "WhenOpened": "2025-11-16T19:21:11.048Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "hurting.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\hurting.cs",
               "RelativeDocumentMoniker": "Assets\\hurting.cs",
