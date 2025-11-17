@@ -9,7 +9,7 @@ public class Gamemanager : MonoBehaviour
 
     public HUD hud;
     public GameObject[] vidas;
-    private int vidasRestantes = 3;
+    private int vidasRestantes = 0;
 
     private void Awake()
     {
@@ -20,6 +20,15 @@ public class Gamemanager : MonoBehaviour
         else
         {
             Debug.Log("Más de un manager");
+        }
+    }
+
+    public void Start()
+    {
+        for (int i = 0; i < vidas.Length; i++)
+        {
+            vidas[i].gameObject.SetActive(true);
+            vidasRestantes++;
         }
     }
     public void setear_puntosfijos(int puntosfijos)
