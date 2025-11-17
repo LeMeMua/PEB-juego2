@@ -10629,9 +10629,11 @@ MonoBehaviour:
   dialogues:
   - text: Tu eres la elegida
     displayTime: 3
+  - text: Nos salvaras a todos
+    displayTime: 3
   fadeInSpeed: 0.5
   fadeOutSpeed: 0.5
-  skipFade: 1
+  skipFade: 0
 --- !u!4 &358105061
 Transform:
   m_ObjectHideFlags: 0
@@ -12386,8 +12388,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 2.9}
+  m_SizeDelta: {x: 477.96, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407434228
 MonoBehaviour:
