@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class water : MonoBehaviour
 {
-    public float lifeTime = 1.5f;
+    public float lifeTime = 10f;
     private float timer;
 
     Rigidbody2D rb;
