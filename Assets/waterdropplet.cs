@@ -27,9 +27,6 @@ public class waterdropplet : MonoBehaviour
                 return obj;
         }
 
-        GameObject extra = Instantiate(dropletPrefab);
-        extra.SetActive(false);
-        pool.Add(extra);
-        return extra;
+        return null;
     }
 }
