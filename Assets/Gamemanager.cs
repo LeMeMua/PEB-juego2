@@ -5,7 +5,7 @@ public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager instance { get; private set; }
     public int Puntos_Totales { get { return puntosTotales; }}
-    private int puntosTotales;
+    private int puntosTotales = 100;
 
     public HUD hud;
     public GameObject[] vidas;
@@ -22,19 +22,10 @@ public class Gamemanager : MonoBehaviour
             Debug.Log("Más de un manager");
         }
     }
-
-    private void Start()
+    public void setear_puntosfijos(int puntosfijos)
     {
-        // Reiniciar vidas al iniciar
-        vidasRestantes = vidas.Length;
-        for (int i = 0; i < vidas.Length; i++)
-        {
-            if (vidas[i] != null)
-                vidas[i].SetActive(true);
-        }
-        puntosTotales = 0;
+        puntosTotales = puntosfijos;
     }
-
     public void puntos_totales (int puntos_a_sumar)
     {
         puntosTotales += puntos_a_sumar;

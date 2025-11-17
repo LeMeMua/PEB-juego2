@@ -8,6 +8,7 @@ TagManager:
   - Objects
   - Water
   - FluidCamera
+  - Enemies
   layers:
   - Default
   - TransparentFX
