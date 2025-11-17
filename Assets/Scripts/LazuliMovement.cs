@@ -1,21 +1,29 @@
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
     float horizontalInput;
     float moveSpeed = 1.5f;
-    public float bulletSpeed = 10f;
     bool isFacingRight = true;
     float jumpPower = 3f;
     bool isJumping = false;
     bool isGrounded = true;
     bool isVarita = false;
+    public bool isHurting = false;
+    bool isRecharging = false;
     float anguloRadianes;
     float anguloGrados;
     float max_impulse = 2f;
     Vector2 velocity;
+
+    int golpes = 0;
+    float last_hit = 0f;
+    float time_enemy = 0f;
+
 
 
     public float distanciaMark = 0.05f;   // distancia desde el player a cada mark
@@ -30,10 +38,13 @@ public class PlayerMovement : MonoBehaviour
     float sprayTimer = 0f;
     bool spraying = false;
 
-    int cantidad_agua = 0;
-    float time_cooldown = 0.1f;
+    int cantidad_agua = 100;
+    float time_recharge = 3f;
+    float time_charging = 0f;
 
+    public GameObject recarga;
     private Animator animator; // Cambié el nombre a minúscula por convención
+    public Animator recharge;
     Rigidbody2D rb;
 
     private Vector3 objetivo;
@@ -52,7 +63,9 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>(); // CORRECCIÓN: Obtener el Animator, no Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
+
         mark = transform.Find("Marcador").gameObject;
+        recarga.SetActive(false);
 
     }
 
@@ -73,6 +86,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Jumping", isJumping);
         animator.SetBool("Grounded", isGrounded);
         animator.SetBool("Varita", isVarita);
+        //animator.SetBool("Hurting", isHurting);
+        
 
         // Salto
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -82,30 +97,51 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (isVarita)
         {
-            spraying = true;
-            SprayWater();
-        }
-        else
-        {
-            spraying = false;
-            sprayTimer = 0f;
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                spraying = true;
+                SprayWater();
+            }
+            else if (Input.GetKey(KeyCode.R))
+            {
+                cantidad_agua = Gamemanager.instance.Puntos_Totales;
+                if (cantidad_agua < 100) {
+                    spraying = false;
+                    sprayTimer = 0f;
+                    recarga.SetActive(true);
+                    recharge.SetBool("Recharging", true);
+                }
+                
+            }
+            else if (Input.GetKeyUp(KeyCode.R))
+            {
+                recharge.SetBool("Recharging", false);
+            }
+            else
+            {
+                spraying = false;
+                sprayTimer = 0f;
+                time_charging = 0f;
+                recarga.SetActive(false);
+            }
         }
     }
 
+    
     void SprayWater()
     {
-        sprayTimer += Time.deltaTime;
-
-        while (sprayTimer >= sprayRate)
+        if (cantidad_agua >= 1)
         {
-            FireDroplet(marcador);
+            sprayTimer += Time.deltaTime;
 
-            cantidad_agua += 2;
-            Gamemanager.instance.puntos_totales(cantidad_agua);
+            while (sprayTimer >= sprayRate)
+            {
+                FireDroplet(marcador);
 
-            sprayTimer -= sprayRate;
+                sprayTimer -= sprayRate;
+            }
         }
     }
 
@@ -120,6 +156,9 @@ public class PlayerMovement : MonoBehaviour
             drop.SetActive(true);
 
             Rigidbody2D drb = drop.GetComponent<Rigidbody2D>();
+
+            cantidad_agua -= 1;
+            Gamemanager.instance.puntos_totales(-1);
 
             Vector2 dir = (objetivo - transform.position).normalized;
             Debug.Log(dir);
@@ -190,17 +229,29 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Verificar si está tocando el suelo
-        if (collision.gameObject.CompareTag("Ground") || collision.contacts[0].normal.y > 0.7f)
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
             isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("Enemies"))
+        {
+            time_enemy = Time.time;
+            if (golpes < 3 && time_enemy > last_hit + 1f)
+            {
+                Gamemanager.instance.desactivar_vida(golpes);
+                golpes++;
+
+                last_hit = time_enemy;
+                animator.SetBool("Hurting", true);
+            }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         // Verificar si deja de tocar el suelo
-        if (collision.gameObject.CompareTag("Ground") || collision.contacts[0].normal.y > 0.7f)
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }

@@ -4,7 +4,7 @@ public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager instance { get; private set; }
     public int Puntos_Totales { get { return puntosTotales; }}
-    private int puntosTotales;
+    private int puntosTotales = 100;
 
     public HUD hud;
     public GameObject[] vidas;
@@ -18,6 +18,10 @@ public class Gamemanager : MonoBehaviour
         {
             Debug.Log("Más de un manager");
         }
+    }
+    public void setear_puntosfijos(int puntosfijos)
+    {
+        puntosTotales = puntosfijos;
     }
     public void puntos_totales (int puntos_a_sumar)
     {
