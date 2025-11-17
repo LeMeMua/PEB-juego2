@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|c:\\users\\yosss\\downloads\\eclipse-unity-main\\peb-juego\\assets\\scripts\\introscenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\introscenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,8 +32,14 @@
       "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\fov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+=======
+>>>>>>> parent of 1af7826 (all good)
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Temp\\GeneratedFromSurface-Custom-light.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Temp\\GeneratedFromSurface-Custom-light.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\fov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|solutionrelative:assets\\fov.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C150636-1855-3511-253D-C8202B9A0F1F}|Assembly-CSharp.csproj|C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +85,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,6 +105,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "SceneTransition.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\Scripts\\SceneTransition.cs",
@@ -150,6 +158,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
+=======
+              "DocumentIndex": 0,
+>>>>>>> parent of 1af7826 (all good)
               "Title": "GeneratedFromSurface-Custom-light.shader",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Temp\\GeneratedFromSurface-Custom-light.shader",
               "RelativeDocumentMoniker": "Temp\\GeneratedFromSurface-Custom-light.shader",
@@ -161,13 +172,21 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
+=======
+              "DocumentIndex": 1,
+>>>>>>> parent of 1af7826 (all good)
               "Title": "FOV.cs",
               "DocumentMoniker": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\FOV.cs",
               "RelativeDocumentMoniker": "Assets\\FOV.cs",
               "ToolTip": "C:\\Users\\yosss\\Downloads\\Eclipse-Unity-main\\PEB-juego\\Assets\\FOV.cs",
               "RelativeToolTip": "Assets\\FOV.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAADcAAAAAAAAAAAAwwFQAAABjAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCoAAABbAAAAAAAAAA==",
+>>>>>>> parent of 1af7826 (all good)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T03:02:07.663Z"
             },
