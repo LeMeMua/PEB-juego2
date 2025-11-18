@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     bool spraying = false;
 
     int cantidad_agua = 100;
-    float time_recharge = 3f;
+    float time_recharge = 5f;  // Aumentado de 3f a 5f para que tarde más recargando
     float time_charging = 0f;
 
     public GameObject recarga;
@@ -58,6 +58,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform marcador;
     public Transform marcador2;
 
+    // Sistema de checkpoints
+    private Vector3 lastSafePosition;
+    private bool isOnSafeGround = false;
+    
+    // Sistema anti-pegado lateral
+    private bool isCollidingLaterally = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +74,8 @@ public class PlayerMovement : MonoBehaviour
         mark = transform.Find("Marcador").gameObject;
         recarga.SetActive(false);
 
+        // Guardar posición inicial como checkpoint
+        lastSafePosition = transform.position;
     }
 
     // Update is called once per frame
@@ -104,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
                 spraying = true;
                 SprayWater();
             }
-            else if (Input.GetKey(KeyCode.R))
+            else if (Input.GetKey(KeyCode.R) && isGrounded)  // Solo puede recargar cuando está en el suelo
             {
                 cantidad_agua = Gamemanager.instance.Puntos_Totales;
                 if (cantidad_agua < 100) {
@@ -112,19 +121,54 @@ public class PlayerMovement : MonoBehaviour
                     sprayTimer = 0f;
                     recarga.SetActive(true);
                     recharge.SetBool("Recharging", true);
+                    
+                    // Incrementar el timer de recarga
+                    time_charging += Time.deltaTime;
+                    
+                    // Si el tiempo de recarga se completó, recargar
+                    if (time_charging >= time_recharge)
+                    {
+                        // Buscar el componente recargua y llamar al método Recharge
+                        recargua recargaScript = recarga.GetComponent<recargua>();
+                        if (recargaScript != null)
+                        {
+                            recargaScript.Recharge();
+                        }
+                        time_charging = 0f;  // Resetear el timer
+                        recharge.SetBool("Recharging", false);
+                        recarga.SetActive(false);
+                    }
                 }
                 
+            }
+            else if (Input.GetKey(KeyCode.R) && !isGrounded)
+            {
+                // Si intenta recargar en el aire, cancelar cualquier recarga en progreso
+                time_charging = 0f;
+                recharge.SetBool("Recharging", false);
+                recarga.SetActive(false);
             }
             else if (Input.GetKeyUp(KeyCode.R))
             {
                 recharge.SetBool("Recharging", false);
+                time_charging = 0f;  // Resetear si suelta la tecla antes de completar
             }
             else
             {
                 spraying = false;
                 sprayTimer = 0f;
-                time_charging = 0f;
-                recarga.SetActive(false);
+                // Si deja de estar en el suelo mientras recarga, cancelar la recarga
+                if (!isGrounded && time_charging > 0f)
+                {
+                    time_charging = 0f;
+                    recharge.SetBool("Recharging", false);
+                    recarga.SetActive(false);
+                }
+                else if (!Input.GetKey(KeyCode.R))
+                {
+                    time_charging = 0f;
+                    recarga.SetActive(false);
+                }
             }
         }
     }
@@ -175,7 +219,16 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y); // Corrección para Unity 6.0
+        // Solo aplicar movimiento horizontal si no está chocando lateralmente con una plataforma
+        if (!isCollidingLaterally)
+        {
+            rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y); // Corrección para Unity 6.0
+        }
+        else
+        {
+            // Si está chocando lateralmente, permitir que caiga pero limitar el movimiento horizontal
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
     }
 
     void FlipSprite(float grados)
@@ -228,11 +281,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verificar si está tocando el suelo
-        if (collision.gameObject.CompareTag("Ground"))
+        // Verificar si está tocando el suelo o plataforma DESDE ARRIBA
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
-            isJumping = false;
-            isGrounded = true;
+            // Verificar la dirección de la colisión
+            // Si el contacto viene desde arriba (normal apunta hacia arriba), es suelo
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                // Si la normal apunta hacia arriba (Y > 0.5), es una colisión desde arriba
+                if (contact.normal.y > 0.5f)
+                {
+                    isJumping = false;
+                    isGrounded = true;
+                    // Guardar posición cuando está en suelo seguro
+                    lastSafePosition = transform.position;
+                    isOnSafeGround = true;
+                    break; // Solo necesitamos un contacto válido
+                }
+            }
         }
         if (collision.gameObject.CompareTag("Enemies"))
         {
@@ -248,13 +314,75 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Verificar si está tocando el suelo o plataforma DESDE ARRIBA
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
+        {
+            // Verificar la dirección de la colisión
+            bool isTouchingFromTop = false;
+            float bestNormalY = 0f;
+            
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                if (contact.normal.y > bestNormalY)
+                {
+                    bestNormalY = contact.normal.y;
+                }
+                
+                if (contact.normal.y > 0.5f)
+                {
+                    isTouchingFromTop = true;
+                    break;
+                }
+            }
+            
+            if (isTouchingFromTop)
+            {
+                isGrounded = true;
+                isJumping = false;
+                lastSafePosition = transform.position;
+                isOnSafeGround = true;
+                isCollidingLaterally = false;
+            }
+            else
+            {
+                // Chocando lateralmente
+                isGrounded = false;
+                isCollidingLaterally = true;
+            }
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
-        // Verificar si deja de tocar el suelo
-        if (collision.gameObject.CompareTag("Ground"))
+        // Verificar si deja de tocar el suelo o plataforma
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
+            isOnSafeGround = false;
+            isCollidingLaterally = false;
         }
+    }
+    
+    // Método público para establecer checkpoint
+    public void SetCheckpoint(Vector3 position)
+    {
+        lastSafePosition = position;
+    }
+
+    // Método público para obtener última posición segura
+    public Vector3 GetLastSafePosition()
+    {
+        return lastSafePosition;
+    }
+    
+    // Método para resetear estado de grounded (útil después de respawn)
+    public void ResetGroundedState()
+    {
+        isGrounded = false;
+        isJumping = false;
+        isOnSafeGround = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -9,6 +9,8 @@ TagManager:
   - Water
   - FluidCamera
   - Enemies
+  - Lazuli
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -55,7 +57,7 @@ TagManager:
   - name: 3Background
     uniqueID: 4075495807
     locked: 0
-  - name: Player
+  - name: 4Player
     uniqueID: 2273816839
     locked: 0
   - name: 4Foreground

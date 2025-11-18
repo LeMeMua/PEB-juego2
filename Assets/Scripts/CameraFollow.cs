@@ -11,11 +11,13 @@ public class CameraFollow : MonoBehaviour
     {
         if (target == null) return;
 
-        Vector3 desiredPosition = target.position + offset;
+        // Solo calcular la posición deseada en X, mantener Y de la cámara
+        Vector3 desiredPosition = new Vector3(target.position.x + offset.x, transform.position.y, transform.position.z);
 
         Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-        transform.position = new Vector3(smoothPosition.x, smoothPosition.y, transform.position.z);
+        // Solo actualizar X, mantener Y y Z actuales
+        transform.position = new Vector3(smoothPosition.x, transform.position.y, transform.position.z);
     }
 
 }

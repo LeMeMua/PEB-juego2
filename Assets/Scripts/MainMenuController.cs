@@ -21,7 +21,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("IntroScene");
+        SceneManager.LoadScene("PrologoScene");
     }
 
     public void ShowCredits()

@@ -34,11 +34,12 @@ public class IntroSceneController : MonoBehaviour
         sceneTransition.transitionDuration = fadeDuration;
         sceneTransition.useFade = true;
 
-        // Iniciar diálogos si existe el sistema
-        if (dialogueSystem != null)
-        {
-            dialogueSystem.StartDialogue();
-        }
+        // REMOVIDO: Ya no inicia diálogos automáticamente
+        // Los diálogos se activarán mediante DialogueTrigger cuando el jugador pase por zonas
+        // if (dialogueSystem != null)
+        // {
+        //     dialogueSystem.StartDialogue();
+        // }
     }
 
     void Update()

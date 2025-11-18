@@ -31,6 +31,7 @@ public class DialogueSystem : MonoBehaviour
     private int currentDialogueIndex = 0;
     private bool isShowingDialogue = false;
     private Coroutine currentDialogueCoroutine;
+    private bool autoContinue = false; // Si debe continuar automáticamente al siguiente diálogo
 
     void Start()
     {
@@ -82,9 +83,40 @@ public class DialogueSystem : MonoBehaviour
 
         currentDialogueIndex = 0;
         isShowingDialogue = true;
+        autoContinue = true; // SÍ continuar automáticamente cuando se inicia desde StartDialogue
 
         Debug.Log($"DialogueSystem: Iniciando diálogos. Total: {dialogues.Count}");
         ShowDialogue(0);
+    }
+
+    // Método para mostrar un diálogo específico por índice (llamado desde DialogueTrigger)
+    public void ShowDialogueByIndex(int index)
+    {
+        if (index < 0 || index >= dialogues.Count)
+        {
+            Debug.LogWarning($"DialogueSystem: Índice {index} fuera de rango. Total diálogos: {dialogues.Count}");
+            return;
+        }
+        
+        // Verificar que los componentes UI estén asignados
+        if (dialoguePanel == null)
+        {
+            Debug.LogError("DialogueSystem: Dialogue Panel no está asignado!");
+            return;
+        }
+        
+        if (dialogueText == null)
+        {
+            Debug.LogError("DialogueSystem: Dialogue Text no está asignado!");
+            return;
+        }
+        
+        currentDialogueIndex = index;
+        isShowingDialogue = true;
+        autoContinue = false; // NO continuar automáticamente cuando se activa desde trigger
+        
+        Debug.Log($"DialogueSystem: Mostrando diálogo {index + 1}/{dialogues.Count} desde trigger");
+        ShowDialogue(index);
     }
 
     void ShowDialogue(int index)
@@ -184,14 +216,23 @@ public class DialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
         }
 
-        // Siguiente diálogo
-        currentDialogueIndex++;
-        if (currentDialogueIndex < dialogues.Count)
+        // Solo continuar automáticamente si autoContinue está activado
+        if (autoContinue)
         {
-            ShowDialogue(currentDialogueIndex);
+            // Siguiente diálogo
+            currentDialogueIndex++;
+            if (currentDialogueIndex < dialogues.Count)
+            {
+                ShowDialogue(currentDialogueIndex);
+            }
+            else
+            {
+                EndDialogue();
+            }
         }
         else
         {
+            // No continuar automáticamente, solo terminar este diálogo
             EndDialogue();
         }
     }
