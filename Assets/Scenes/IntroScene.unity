@@ -12939,7 +12939,7 @@ MonoBehaviour:
     displayTime: 1.5
   fadeInSpeed: 0.5
   fadeOutSpeed: 0.5
-  skipFade: 1
+  skipFade: 0
 --- !u!4 &358105061
 Transform:
   m_ObjectHideFlags: 0
